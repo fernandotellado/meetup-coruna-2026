@@ -4,7 +4,7 @@ Recursos de la charla de Fernando Tellado en el **Meetup WordPress Coruña 2026*
 
 **La presentación, en PDF:** [`seguridad-wordpress-presupuesto-cero.pdf`](seguridad-wordpress-presupuesto-cero.pdf).
 
-Todo lo que se enseñó en pantalla está aquí, con el mismo orden de la charla y en tres actos: primero lo que WordPress ya hace bien y solo pide que lo mires (ajustes del escritorio, sin plugins ni nada), después lo que hace mal o le falta y cómo se arregla, de menos a más código (`wp-config.php`, `.htaccess` y un archivo PHP) y, al final, Vigilante para comprobarlo todo.
+Todo lo que se enseñé en pantalla está aquí, con el mismo orden de la charla y en tres actos: primero lo que WordPress ya hace bien y solo pide que lo mires (ajustes del escritorio, sin plugins ni nada), después lo que hace mal o le falta y cómo se arregla, de menos a más código (`wp-config.php`, `.htaccess` y un archivo PHP) y, al final, Vigilante para comprobarlo todo.
 
 Una norma para todo lo que viene: **cada capa cuesta 0 €, y ninguna sustituye a las tres que de verdad protegen**. Actualizar, contraseñas largas y únicas e identificación en dos pasos. Lo de esta carpeta es capa extra, no un escudo.
 
@@ -120,7 +120,7 @@ El archivo **no** hace: un segundo factor de verdad (códigos TOTP, lectura de Q
 
 ## 3. Acto 3: Vigilante, para comprobarlo todo · diapositivas 39 a 44
 
-[Vigilante](https://wordpress.org/plugins/vigilante/) es un plugin mío, gratuito y sin versión de pago. No se usó para hacer el trabajo del acto 2, sino para **comprobarlo**: lo que hemos puesto a mano, ¿se ve desde fuera?
+[Vigilante](https://es.wordpress.org/plugins/vigilante/) es un plugin mío, gratuito y sin versión de pago. No se usó para hacer el trabajo del acto 2, sino para **comprobarlo**: lo que hemos puesto a mano, ¿se ve desde fuera?
 
 - **La Comprobación de seguridad** (diapositivas 41 a 43). Más de 50 comprobaciones en 6 categorías (SSL/TLS, cabeceras HTTP, exposición de WordPress, acceso e identificación, archivos sensibles y comprobaciones internas). Corre en tu servidor, sin cuentas ni claves de ningún servicio.
 - **La nota** (diapositiva 42). De 0 a 100 y con calificación de A a E. En verde, lo que ve en el sitio en vivo; en rojo, lo que falta o lo que el plugin no puede ver.
