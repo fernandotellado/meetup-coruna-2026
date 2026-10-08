@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------
+# Limpieza en el .htaccess de la raíz · Diapositiva 26
+# Charla «Seguridad en WordPress con presupuesto cero» · Meetup WordPress Coruña 2026
+#
+# Para servidores Apache 2.4 o LiteSpeed. En Nginx no hay .htaccess: son
+# reglas equivalentes en la configuración del servidor; pídeselas a tu hosting.
+#
+# Pégalo en el .htaccess de la raíz de WordPress, FUERA del bloque
+# «# BEGIN WordPress ... # END WordPress», que WordPress lo reescribe.
+# Lo más cómodo es ponerlo ARRIBA del todo, antes de ese bloque.
+#
+# Haz una copia del .htaccess antes de tocarlo. Un error de sintaxis aquí
+# tumba la web con un error 500: si pasa, restaura la copia.
+# ---------------------------------------------------------------------
+
+# Sin listado de directorios: si una carpeta no tiene index, no se enseña su contenido.
+# Si tu web da error 500 con esta línea, tu hosting no deja cambiar «Options»
+# desde el .htaccess: quítala y pídeselo a tu hosting.
+Options -Indexes
+
+# Fuera los archivos que cuentan qué versión tienes. Se regeneran con cada
+# actualización del núcleo, así que borrarlos a mano no dura; esta regla sí.
+# wp-config.php y wp-config-sample.php no se descargan nunca, pero no cuesta nada.
+<FilesMatch "^(readme\.html|license\.txt|wp-config-sample\.php|wp-config\.php)$">
+	Require all denied
+</FilesMatch>
+
+# Registros y copias que se quedan por ahí: si activas el registro de
+# depuración, WordPress escribe wp-content/debug.log y, sin esta regla,
+# se puede descargar con una URL. Lo mismo con un .sql o un .bak olvidados.
+<FilesMatch "\.(log|sql|bak)$">
+	Require all denied
+</FilesMatch>
+
+# SOLO si no usas la app móvil de WordPress ni Jetpack (ni ningún otro servicio
+# que hable por XML-RPC). Es la forma más dura de cerrarlo: el servidor corta
+# antes de ejecutar nada de PHP, y con él la prueba de contraseñas que se hace por ahí.
+<Files xmlrpc.php>
+	Require all denied
+</Files>

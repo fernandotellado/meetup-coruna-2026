@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------
+# PHP fuera de las subidas · Diapositiva 25
+# Charla «Seguridad en WordPress con presupuesto cero» · Meetup WordPress Coruña 2026
+#
+# Este archivo va DENTRO de la carpeta de subidas: wp-content/uploads/.htaccess
+# (se llama «.htaccess», con el punto delante; aquí lleva otro nombre para
+# que no se aplique solo por estar en este repositorio).
+# Si ya existe un .htaccess en esa carpeta, añade las líneas al final.
+#
+# Es la entrada más típica cuando alguien consigue subir un archivo
+# disfrazado de imagen: aunque suba un .php, el servidor no lo ejecuta.
+#
+# Para servidores Apache 2.4 o LiteSpeed. En Nginx no hay .htaccess: pídele
+# a tu hosting una regla que impida ejecutar PHP en wp-content/uploads.
+#
+# Haz una copia de seguridad antes de tocarlo. Después comprueba que las
+# imágenes de tu web se siguen viendo.
+# ---------------------------------------------------------------------
+
+# Cubre .php, .php5, .php7, .phtml y .phar.
+<FilesMatch "\.(php[0-9]*|phtml|phar)$">
+	Require all denied
+</FilesMatch>
