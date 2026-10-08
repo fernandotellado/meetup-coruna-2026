@@ -14,7 +14,7 @@ Una norma para todo lo que viene: **cada capa cuesta 0 €, y ninguna sustituye 
 
 | Archivo | Qué es | Diapositiva |
 |---|---|---|
-| [`seguridad-wordpress-presupuesto-cero.pdf`](seguridad-wordpress-presupuesto-cero.pdf) | La presentación de la charla, completa | 1 a 45 |
+| [`seguridad-wordpress-presupuesto-cero.pdf`](seguridad-wordpress-presupuesto-cero.pdf) | La presentación de la charla, completa | 1 a 46 |
 | [`wp-config-fragmentos.php`](wp-config-fragmentos.php) | Las líneas para quitar el editor de código, forzar https en el escritorio, apagar la depuración y limitar el HTML sin filtrar, más dos opcionales con su contrapeso | 22 y 23 |
 | [`uploads.htaccess`](uploads.htaccess) | PHP fuera de la carpeta de subidas | 25 |
 | [`htaccess-raiz.htaccess`](htaccess-raiz.htaccess) | Limpieza en la raíz: sin listado de carpetas, sin `readme.html`, sin `.log`, `.sql` ni `.bak` descargables y `xmlrpc.php` cortado | 26 |
